@@ -173,7 +173,7 @@ plot_theme <-   theme_light() +
     axis.title.y = element_text(size=18)
   )
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion of loan status
   table(loan$loan_status)
@@ -234,6 +234,7 @@ ggplot(loan,aes(x=loan$term, fill=loan$term)) +
   labs(title = "Plot of Proportion of Term", y = "Frequency", x = "Term of Loan")+
   plot_theme + theme(axis.text=element_text(size=14),
                      axis.title=element_text(size=14))
+                     
 ------------------------------------------------------
 
 ### Proportion by Verification Status
