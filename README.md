@@ -1,22 +1,17 @@
 # GramenerCaseStudy
 To identify the risky loan applicants, so that such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.  
 
-##############################################################################################
-###                                                                                          ##
-###   Project     : Gramener Case Study                                                      ##
-###                                                                                          ##
-###   Description : To identify the risky loan applicants, so that such loans can be reduced ##
-###                 thereby cutting down the amount of credit loss. Identification of such   ##
-###                 applicants using EDA is the aim of this case study.                      ##
-###                                                                                          ##
-###   Date        : 30-Sept-2018                                                             ##
-###                                                                                          ##
-###   Author      : 1. Bhagyashree Barhate                                                   ##
-###                 2. Deepankar Kotnala                                                     ##
-###                 3. Gautami Ramesh Havele                                                 ##
-###                 4. Rohit Saini                                                           ##
-###                                                                                          ##
-##############################################################################################
+###########################################################################################
+   Project     : Gramener Case Study                                                      ##
+   Description : To identify the risky loan applicants, so that such loans can be reduced ##
+                 thereby cutting down the amount of credit loss. Identification of such   ##
+                 applicants using EDA is the aim of this case study.                      ##
+   Date        : 30-Sept-2018                                                             ##
+   Author      : 1. Bhagyashree Barhate                                                   ##
+                 2. Deepankar Kotnala                                                     ##
+                 3. Gautami Ramesh Havele                                                 ##
+                 4. Rohit Saini                                                           ##
+###########################################################################################
 
 
 ## Installing and Loading required libraries                       
