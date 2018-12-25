@@ -2,15 +2,13 @@
 To identify the risky loan applicants, so that such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.  
 
 ------------------------------------------------------
-###   Project     : Gramener Case Study                                                     
-###   Description : To identify the risky loan applicants, so that such loans can be reduced 
-###                 thereby cutting down the amount of credit loss. Identification of such  
-###                 applicants using EDA is the aim of this case study.                     
-###   Date        : 30-Sept-2018                                                             
-###   Author      : 1. Bhagyashree Barhate                                                   
-###                 2. Deepankar Kotnala                                                     
-###                 3. Gautami Ramesh Havele                                                 
-###                 4. Rohit Saini                                                           
+####   Project     : Gramener Case Study                                                     
+####   Description : To identify the risky loan applicants, so that such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.                     
+####   Date        : 30-Sept-2018                                                             
+####   Author      : 1. Bhagyashree Barhate                                                   
+####                 2. Deepankar Kotnala                                                     
+####                 3. Gautami Ramesh Havele                                                 
+####                4. Rohit Saini                                                           
 ------------------------------------------------------
 
 
@@ -143,7 +141,7 @@ loan$earliest_cr_line<- parse_date_time(loan$earliest_cr_line, orders = c("my", 
 loan <- loan[!loan$loan_status == "Current", ]
 
 
-===========================================================================================
+------------------------------------------------------
 ### Metadata
 
 ### Demographic Variables of Customers:
@@ -155,7 +153,7 @@ loan <- loan[!loan$loan_status == "Current", ]
 ### Other inancial variables of customer information:
 ### dti, credit_line_age, total_acc, revol_util, revol_bal, pub_rec, inq_last_6mths, earliest_cr_line, delinq_2yrs
 
-===========================================================================================
+------------------------------------------------------
 ### Derived Columns
 
 ### Year of issuance of loan
@@ -164,7 +162,7 @@ loan$issue_year <- year(loan$issue_d)
 
 ## Univariate Analysis
 
-===========================================================================================
+------------------------------------------------------
 
 ### Setting a theme for the plots
 
@@ -195,7 +193,7 @@ ggplot(loan,aes(x=loan$loan_status, fill=loan$loan_status)) +
 ### There are around 14.6% people who have a loan default. We have to further analyse on these people's data 
 ### that what could be the possible factors leading them to default on the loan.
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion of Home ownership status
 
@@ -219,7 +217,7 @@ ggplot(loan,aes(x=loan$home_ownership, fill=loan$home_ownership)) +
 ### Majority(around 92%) of the borrowers are either living in Mortgaged or rented houses.
 ### The number of people who own the home are very less (7.7 % only).
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion of Term
   table(loan$term)
@@ -236,7 +234,7 @@ ggplot(loan,aes(x=loan$term, fill=loan$term)) +
   labs(title = "Plot of Proportion of Term", y = "Frequency", x = "Term of Loan")+
   plot_theme + theme(axis.text=element_text(size=14),
                      axis.title=element_text(size=14))
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion by Verification Status
  table(loan$verification_status)
@@ -253,7 +251,7 @@ ggplot(loan,aes(x=loan$verification_status, fill=loan$verification_status)) +
   plot_theme + theme(axis.text=element_text(size=12),
                      axis.title=element_text(size=02))
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion by grade
   table(loan$grade)
@@ -272,7 +270,7 @@ ggplot(loan,aes(x=loan$grade, fill=loan$grade)) +
 ### Grade B is having the highest number of loans, followed by Grade A, 
 ### and the number decreases from grade C to grade F thereafter.
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion by Issue Year
 
@@ -292,7 +290,7 @@ ggplot(loan,aes(x=loan$grade, fill=loan$grade)) +
 ### There is a considerable increase in the number of loan applications from the year 2007 to 2011.
 ### Highest number of loans are issued in the year 2011(around 54.5%).
   
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion by Employment Experience
   
@@ -313,7 +311,7 @@ ggplot(loan,aes(x=loan$grade, fill=loan$grade)) +
 ### The number of applications for loan are higher with the people having lesser years of experience and decreases as the years of experience increases.
 ### Note: The value in 10+ years of experience is more because the number of applications are spread over a larger group of people.
 
-===========================================================================================
+------------------------------------------------------
 
 ### Proportion by Loan Purpose
  
@@ -335,7 +333,7 @@ ggplot(loan,aes(x=loan$purpose, fill=as.factor(loan$purpose))) +
 
 ### Most of the applicants(46.9%) are applying for loan for debt_consolidation purpose, followed by credit_card(12.9%). 
 
-===========================================================================================
+------------------------------------------------------
 ### Proportion by State in which loan was applied
 
 table(loan$addr_state)
@@ -356,7 +354,7 @@ ggplot(loan,aes(x=loan$addr_state, fill=as.factor(loan$addr_state))) +
   theme(axis.text.x = element_text(1)) 
 
 
-===========================================================================================
+------------------------------------------------------
 
 ## Bivariate Analysis
 
@@ -373,11 +371,13 @@ functionBiVar <- function(xval,yval,xlab,ylab){
          title = paste0(ylab," vs ", xlab))+
     plot_theme
 }
-===========================================================================================
+
+------------------------------------------------------
 ### Lets see the pattern between Loan status vs Grade
 functionBiVar( loan$grade,loan$loan_status,
                "Grade", "Loan Status")
-===========================================================================================
+
+------------------------------------------------------
 ### Lets see the pattern between Loan status vs Home ownership
 
 functionBiVar( loan$home_ownership,loan$loan_status,
@@ -385,12 +385,12 @@ functionBiVar( loan$home_ownership,loan$loan_status,
 
 ### It shows us the regular pattern for fully paid customers
 
-===========================================================================================
+------------------------------------------------------
 ###  ** Loan status vs Purpose  *** 
 functionBiVar( loan$purpose,loan$loan_status,
                "Loan Purpose", "Loan Status") + theme(axis.text.x = element_text(angle=45, hjust=1))
 
-===========================================================================================
+------------------------------------------------------
 ### It implies that most of the customer who are in the category of defaultee are taking loan for small_business purpose
 
 ###  ** Loan status vs term  ***
@@ -399,16 +399,18 @@ functionBiVar( loan$term,loan$loan_status,
 
 #23% defaultee's are taking loan for 60 months(5 Year)
 
-===========================================================================================
+------------------------------------------------------
 ###  ** Loan status vs verification status  ***
 functionBiVar( loan$verification_status,loan$loan_status,
                "Verification Status", "Loan Status") 
-===========================================================================================
+               
+------------------------------------------------------
 
 functionBiVar( loan$emp_length,loan$loan_status,
                "Emp Experience", "Loan Status") + 
   theme(axis.text.x = element_text(angle=45, hjust=1))  
-===========================================================================================  
+  
+------------------------------------------------------  
 
 ### Analysing the Annual salary vs the loan status
 ggplot(data = loan, mapping = aes(x= loan$loan_status, y=loan$annual_inc))+ geom_boxplot()
@@ -423,6 +425,6 @@ ggplot(data = loan, mapping = aes(x= loan$loan_status, y=loan$annual_inc,fill=lo
   geom_boxplot() + plot_theme + 
   labs(title = "Plot of Annual Income vs Loan Staus", y = "Annual Salary", x = "Loan Status")
 
-===========================================================================================  
+------------------------------------------------------  
 ### END OF FILE  
-===========================================================================================
+------------------------------------------------------
